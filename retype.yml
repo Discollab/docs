@@ -1,0 +1,13 @@
+input: .
+output: .retype
+
+url: docs.discollab.org
+
+branding:
+  title: Discollab.org
+  label: Docs
+  logo: /static/discollab.svg
+  favicon: /static/favicon.ico
+
+footer:
+  copyright: "&copy; {{ year }} Discollab."
