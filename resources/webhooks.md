@@ -6,7 +6,7 @@ title: "Webhooks"
 # Webhooks
 Get notified as soon as someone votes for your listing on Discollab! We'll send a `POST` request to your provided endpoint.
 ## Get Started
-Your first step is to visit our [dashboard](https://discollab.org/dashboard) and select the server or bot you want a vote webhook for. Once selected, scroll all the way down and look for a button named <b>Show More Options</b>, click it. At the bottom of this extended section, you'll see 2 inputs where you can provide us with your endpoint URL and its token.
+Your first step is to visit our [dashboard](https://discollab.org/dashboard) and select the server or bot you want a vote webhook for, then select the <b>Additional Info</b> tab. At the bottom of this tab, you'll see 2 inputs where you can provide us with your endpoint URL and its token.
 ## Security
 To verify that a webhook came from Discollab, be sure to check the `Authorization` header. It should contain the token you provided in the dashboard.
 
