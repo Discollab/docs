@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.810586240492">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.812565900757">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.810586240492" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.812565900757" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.810586240492" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.812565900757" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.810586240492" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.812565900757" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -173,7 +173,7 @@
         <span>Security</span>
     </h2>
 </doc-anchor-target>
-<p>To verify that a webhook came from Discollab, be sure to check the <code v-pre>Authorization</code> header. It should contain the token you provided in the dashboard.</p>
+<p>To verify that a webhook came from Discollab, be sure to check the <code v-pre>Authorization</code> header. It should be set to <code v-pre>Bearer &lt;token&gt;</code>, where <code v-pre>&lt;token&gt;</code> is the one you set in our dashboard.</p>
 <p>If you&#x27;re using a firewall, be sure to whitelist the IP <code v-pre>51.222.204.155</code>.</p>
 <doc-anchor-target id="structure">
     <h2>
@@ -205,11 +205,23 @@
 </tr>
 <tr>
 <td><code v-pre>voted_on</code></td>
-<td>The time the user voted for the server.</td>
+<td>The time the user voted for the server (will be deprecated on 01/01/25, use <code v-pre>voted_on_iso</code>).</td>
+</tr>
+<tr>
+<td><code v-pre>voted_on_iso</code></td>
+<td>Using the ISO 8601 standard, shows the time in UTC the user voted for the server.</td>
+</tr>
+<tr>
+<td><code v-pre>vote_again</code></td>
+<td>In seconds, when the user can vote for the server again.</td>
 </tr>
 <tr>
 <td><code v-pre>times_voted</code></td>
 <td>How many times the user has voted for the server.</td>
+</tr>
+<tr>
+<td><code v-pre>is_test</code></td>
+<td>Always set to boolean <code v-pre>false</code>, unless using <strong>Send Test Webhook</strong> on our dashboard, then it becomes <code v-pre>true</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -238,11 +250,23 @@
 </tr>
 <tr>
 <td><code v-pre>voted_on</code></td>
-<td>The time the user voted for the bot.</td>
+<td>The time the user voted for the bot (will be deprecated on 01/01/25, use <code v-pre>voted_on_iso</code>).</td>
+</tr>
+<tr>
+<td><code v-pre>voted_on_iso</code></td>
+<td>Using the ISO 8601 standard, shows the time in UTC the user voted for the bot.</td>
+</tr>
+<tr>
+<td><code v-pre>vote_again</code></td>
+<td>In seconds, when the user can vote for the bot again.</td>
 </tr>
 <tr>
 <td><code v-pre>times_voted</code></td>
 <td>How many times the user has voted for the bot.</td>
+</tr>
+<tr>
+<td><code v-pre>is_test</code></td>
+<td>Always set to boolean <code v-pre>false</code>, unless using <strong>Send Test Webhook</strong> on our dashboard, then it becomes <code v-pre>true</code>.</td>
 </tr>
 </tbody>
 </table>
