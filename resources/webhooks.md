@@ -20,7 +20,7 @@ For servers:
 | `guild_id`                   | The ID of the server that was voted for.                                                                                |
 | `user_id`                   | The ID of the user that voted for the server.                                                                                |
 | `username` | The username of the user that voted for the server. |
-| `voted_on` | The time the user voted for the server (will be deprecated on 01/01/25, use `voted_on_iso`). |
+| `voted_on` | The time the user voted for the server (will be deprecated on 01/01/26, use `voted_on_iso`). |
 | `voted_on_iso` | Using the ISO 8601 standard, shows the time in UTC the user voted for the server. |
 | `vote_again` | In seconds, when the user can vote for the server again. |
 | `times_voted` | How many times the user has voted for the server. |
@@ -33,7 +33,7 @@ For bots:
 | `client_id`                   | The ID of the bot that was voted for.                                                                                |
 | `user_id`                   | The ID of the user that voted for the bot.                                                                                |
 | `username` | The username of the user that voted for the bot. |
-| `voted_on` | The time the user voted for the bot (will be deprecated on 01/01/25, use `voted_on_iso`). |
+| `voted_on` | The time the user voted for the bot (will be deprecated on 01/01/26, use `voted_on_iso`). |
 | `voted_on_iso` | Using the ISO 8601 standard, shows the time in UTC the user voted for the bot. |
 | `vote_again` | In seconds, when the user can vote for the bot again. |
 | `times_voted` | How many times the user has voted for the bot. |
