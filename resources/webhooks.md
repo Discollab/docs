@@ -8,7 +8,7 @@ Get notified as soon as someone votes for your listing on Discollab! We'll send 
 ## Get Started
 Your first step is to visit our [dashboard](https://discollab.org/dashboard) and select the server or bot you want a vote webhook for, then select the <b>Additional Info</b> tab. At the bottom of this tab, you'll see 2 inputs where you can provide us with your endpoint URL and its token.
 ## Security
-To verify that a webhook came from Discollab, be sure to check the `Authorization` header. It should contain the token you provided in the dashboard.
+To verify that a webhook came from Discollab, be sure to check the `Authorization` header. It should be set to `Bearer <token>`, where `<token>` is the one you set in our dashboard.
 
 If you're using a firewall, be sure to whitelist the IP `51.222.204.155`.
 
@@ -20,8 +20,11 @@ For servers:
 | `guild_id`                   | The ID of the server that was voted for.                                                                                |
 | `user_id`                   | The ID of the user that voted for the server.                                                                                |
 | `username` | The username of the user that voted for the server. |
-| `voted_on` | The time the user voted for the server. |
+| `voted_on` | The time the user voted for the server (will be deprecated on 01/01/25, use `voted_on_iso`). |
+| `voted_on_iso` | Using the ISO 8601 standard, shows the time in UTC the user voted for the server. |
+| `vote_again` | In seconds, when the user can vote for the server again. |
 | `times_voted` | How many times the user has voted for the server. |
+| `is_test` | Always set to boolean `false`, unless using **Send Test Webhook** on our dashboard, then it becomes `true`. |
 
 For bots:
 
@@ -30,5 +33,8 @@ For bots:
 | `client_id`                   | The ID of the bot that was voted for.                                                                                |
 | `user_id`                   | The ID of the user that voted for the bot.                                                                                |
 | `username` | The username of the user that voted for the bot. |
-| `voted_on` | The time the user voted for the bot. |
+| `voted_on` | The time the user voted for the bot (will be deprecated on 01/01/25, use `voted_on_iso`). |
+| `voted_on_iso` | Using the ISO 8601 standard, shows the time in UTC the user voted for the bot. |
+| `vote_again` | In seconds, when the user can vote for the bot again. |
 | `times_voted` | How many times the user has voted for the bot. |
+| `is_test` | Always set to boolean `false`, unless using **Send Test Webhook** on our dashboard, then it becomes `true`. |
